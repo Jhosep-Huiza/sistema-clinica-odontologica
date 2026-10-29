@@ -79,19 +79,6 @@ No hay usuarios predeterminados. En la pantalla de acceso:
 - Las credenciales de base de datos **no** están escritas en el código.
 - Para producción faltan: HTTPS, permisos por rol, auditoría y copias de seguridad.
 
-## Diferencias con el proyecto de veterinaria de origen
-
-| Veterinaria | Clínica odontológica |
-|---|---|
-| Dueños + Mascotas | **Pacientes** (datos personales directos) |
-| Veterinarios | **Odontólogos** (con especialidad) |
-| Citas con mascota | Citas con paciente + **control de cruces de horario** |
-| Diagnósticos y tratamientos | Igual, con **pieza dental** en tratamientos |
-| Pagos: "contado" | Pagos: **"efectivo"** (y tarjeta de crédito/débito, Yape) |
-| Reportes clínicos (CRUD) | **Reportes generados** por periodo: atenciones, ingresos y citas pendientes |
-| Contraseña de MySQL escrita en el código | Configuración por **variables de entorno** |
-| Carpeta `assetes/` y tabla `password_resets` (no usada) | Carpeta `assets/`; tabla eliminada |
-
 ## Modelo de datos
 
 ```mermaid
@@ -174,5 +161,3 @@ erDiagram
         tinyint activo
     }
 ```
-
-> Nota: el archivo `ModeloFisicoSistemaVeterinaria.mwb` (MySQL Workbench) del proyecto original no se convirtió. Para tener el modelo físico en Workbench, use *Database → Reverse Engineer* sobre `clinica_odontologica.sql`.
