@@ -15,7 +15,7 @@ class Database
         $this->host = getenv('DB_HOST') ?: 'localhost';
         $this->name = getenv('DB_NAME') ?: 'sonrisa_perfecta_db';
         $this->user = getenv('DB_USER') ?: 'root';
-        $this->password = getenv('DB_PASS') ?: 'jhosep_582006';
+        $this->password = getenv('DB_PASS') ?: '';
     }
 
     public function conectar(): PDO
